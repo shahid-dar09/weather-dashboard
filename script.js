@@ -329,6 +329,6 @@ document.querySelectorAll(".chip").forEach(chip => {
 
 // Load default city on start
 window.addEventListener("DOMContentLoaded", () => {
-    searchInput.value = "Srinagar";
-    handleSearch("Srinagar");
+    searchInput.value = "Anantnag";
+    handleSearch("Anantnag");
 });

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SkyCast Dashboard | Weather App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="default-bg">
+    <div class="bg-overlay"></div>
+
+    <main class="app">
+        <!-- Header -->
+        <header class="top-bar glass-card">
+            <div class="logo">
+                <span class="logo-dot"></span>
+                <span>SkyCast Dashboard</span>
+            </div>
+            <div class="top-right">
+                <span class="tag">Live Weather • Hourly • 5-Day</span>
+            </div>
+        </header>
+
+        <!-- Search -->
+        <section class="search-section">
+            <div class="search-box glass-card">
+                <input type="text" id="search-input" placeholder="Search city e.g. Srinagar, Delhi, London"
+                    autocomplete="off">
+                <button id="search-btn">Search</button>
+            </div>
+            <div class="quick-cities">
+                <button class="chip" data-city="Srinagar">Srinagar</button>
+                <button class="chip" data-city="Delhi">Delhi</button>
+                <button class="chip" data-city="Mumbai">Mumbai</button>
+                <button class="chip" data-city="London">London</button>
+                <button class="chip" data-city="New York">New York</button>
+            </div>
+            <p class="hint-text">Tip: Press <strong>Enter</strong> to search • Click chips for quick cities</p>
+        </section>
+
+        <!-- Error message -->
+        <p id="error-message" class="error-message hidden">
+            Unable to fetch data. Please try again with another city.
+        </p>
+
+        <!-- Loader -->
+        <div id="loader" class="loader-overlay hidden">
+            <div class="loader-spinner"></div>
+        </div>
+
+        <!-- Current Weather -->
+        <section id="current-weather" class="current-weather glass-card hidden">
+            <div class="cw-left">
+                <div class="weather-icon-wrapper">
+                    <img id="weather-icon" class="weather-icon" src="" alt="Weather icon">
+                </div>
+                <div class="temp-city">
+                    <div id="temperature" class="temp">--°C</div>
+                    <div id="city-name" class="city">City</div>
+                    <div id="description" class="description">Condition</div>
+                    <div id="high-low" class="high-low">H: --°C • L: --°C</div>
+                </div>
+            </div>
+
+            <div class="cw-right">
+                <div class="detail">
+                    <span class="label">Feels like</span>
+                    <span id="feels-like" class="value">--°C</span>
+                </div>
+                <div class="detail">
+                    <span class="label">Humidity</span>
+                    <span id="humidity" class="value">--%</span>
+                </div>
+                <div class="detail">
+                    <span class="label">Wind</span>
+                    <span id="wind" class="value">-- km/h</span>
+                </div>
+                <div class="detail">
+                    <span class="label">Pressure</span>
+                    <span id="pressure" class="value">-- hPa</span>
+                </div>
+                <div class="detail">
+                    <span class="label">Visibility</span>
+                    <span id="visibility" class="value">-- km</span>
+                </div>
+                <div class="detail">
+                    <span class="label">Clouds</span>
+                    <span id="clouds" class="value">--%</span>
+                </div>
+                <div class="detail">
+                    <span class="label">Sunrise</span>
+                    <span id="sunrise" class="value">--:--</span>
+                </div>
+                <div class="detail">
+                    <span class="label">Sunset</span>
+                    <span id="sunset" class="value">--:--</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hourly Forecast -->
+        <section id="hourly-section" class="hourly-section hidden">
+            <h2 class="section-title">Next 24 Hours</h2>
+            <div id="hourly-list" class="hourly-list">
+                <!-- Hourly cards injected here -->
+            </div>
+        </section>
+
+        <!-- 5-Day Forecast -->
+        <section id="forecast-section" class="forecast-section hidden">
+            <h2 class="section-title">5-Day Forecast</h2>
+            <div id="forecast" class="forecast-grid">
+                <!-- Cards injected by JS -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <span>Built with ❤️ using OpenWeatherMap API • SkyCast Dashboard</span>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
